@@ -1,0 +1,125 @@
+<main class="about">
+  <section class="about__hero" aria-labelledby="about-heading">
+    <div class="container about__hero-inner">
+      <header>
+        <p class="about__eyebrow">About our training</p>
+        <h1 id="about-heading" class="about__title">
+          Meet your instructor and our training motorcycles
+        </h1>
+        <p class="about__subtitle">
+          A calm, structured learning environment with motorcycles matched to each
+          license category, so you always train on the right bike for your level.
+        </p>
+      </header>
+    </div>
+  </section>
+
+  <section class="about__section" aria-labelledby="instructor-heading">
+    <div class="container about__grid">
+      <div>
+        <h2
+          id="instructor-heading"
+          class="about__section-title"
+        >
+          Your instructor
+        </h2>
+        <p class="about__section-intro">
+          You learn best when you feel safe, heard, and never rushed. Our training
+          is built around that idea.
+        </p>
+
+        <article class="card card--instructor">
+          <div class="card__header">
+            <div class="card__avatar" aria-hidden="true">
+              <!-- Placeholder for instructor photo -->
+              <span>{{ instructor.name[0] }}</span>
+            </div>
+            <div>
+              <h3 class="card__title">{{ instructor.name }}</h3>
+              <p class="card__meta">
+                {{ instructor.experienceYears }}+ years of motorcycle instruction
+              </p>
+            </div>
+          </div>
+
+          <p class="card__text">
+            {{ instructor.description }}
+          </p>
+
+          <div class="card__list-wrapper">
+            <h4 class="card__list-title">
+              Qualifications &amp; focus areas
+            </h4>
+            <ul class="card__list">
+              <li *ngFor="let item of instructor.certifications">
+                {{ item }}
+              </li>
+            </ul>
+          </div>
+
+          <p class="card__footnote">
+            Teaching style:
+            <span>{{ instructor.teachingStyle }}</span>
+          </p>
+        </article>
+      </div>
+
+      <aside class="about__aside" aria-label="Instructor image placeholder">
+        <div class="about__image-placeholder">
+          <!-- Placeholder block for instructor + bike image -->
+          <span>Instructor &amp; bike photo placeholder</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="about__section about__section--muted" aria-labelledby="bikes-heading">
+    <div class="container">
+      <header class="about__section-header">
+        <h2 id="bikes-heading" class="about__section-title">
+          Motorcycles for each license category
+        </h2>
+        <p class="about__section-intro">
+          We carefully select bikes that match the power and handling requirements of
+          each category, so you can focus on learning, not fighting the motorcycle.
+        </p>
+      </header>
+
+      <div class="about__bikes">
+        <article
+          class="card card--bike"
+          *ngFor="let category of categories"
+          aria-labelledby="{{ category.code }}-heading"
+        >
+          <header class="card__header">
+            <div class="card__badge">{{ category.code }}</div>
+            <div>
+              <h3
+                class="card__title card__title--bike"
+                [id]="category.code + '-heading'"
+              >
+                {{ category.title }}
+              </h3>
+              <p class="card__meta">Power: {{ category.power }}</p>
+            </div>
+          </header>
+
+          <p class="card__text">
+            {{ category.bikeDescription }}
+          </p>
+
+          <p class="card__note">
+            Ideal for:
+            <span>{{ category.idealFor }}</span>
+          </p>
+
+          <div class="card__image-placeholder" aria-hidden="true">
+            <!-- Placeholder area for bike photo -->
+            <span>Bike image placeholder ({{ category.code }})</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+

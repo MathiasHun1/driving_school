@@ -1,0 +1,536 @@
+@use '../../../styles.scss' as *;
+@use 'sass:color';
+
+.home {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: $color-text;
+  background-color: $color-bg-light;
+}
+
+
+.container {
+  max-width: $container-max-width;
+  margin-inline: auto;
+  padding-inline: $space-3;
+}
+
+.section {
+  padding: $space-6 $space-0;
+
+  &--light {
+    background-color: $color-bg-light;
+  }
+
+  &--muted {
+    background-color: $color-bg-muted;
+  }
+
+  &--accent {
+    background-color: $color-bg-dark;
+    color: $color-white;
+  }
+
+  @include respond(desktop) {
+    padding: ($space-6 * 1.25) $space-0;
+  }
+}
+
+.section__header {
+  text-align: left;
+  margin-bottom: $space-4;
+
+  @include respond(tablet) {
+    text-align: center;
+    max-width: 40rem;
+    margin-inline: auto;
+    margin-bottom: $space-5;
+  }
+}
+
+.section__title {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: $space-2;
+
+  @include respond(tablet) {
+    font-size: 2rem;
+  }
+}
+
+.section__subtitle {
+  color: $color-text-soft;
+  font-size: 0.95rem;
+
+  @include respond(tablet) {
+    font-size: 1rem;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color $transition-fast,
+    color $transition-fast,
+    transform $transition-fast,
+    box-shadow $transition-fast,
+    border-color $transition-fast;
+
+  &:focus-visible {
+    outline: 3px solid rgba($color-accent, 0.6);
+    outline-offset: 2px;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-bg-dark;
+    box-shadow: $shadow-soft;
+
+    &:hover,
+    &:focus-visible {
+      background-color: color.scale($color-primary, $lightness: -8%);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.3);
+    }
+  }
+
+  &--secondary {
+    background-color: $color-bg-dark;
+    color: $color-white;
+    border-color: $color-bg-dark;
+
+    &:hover,
+    &:focus-visible {
+      background-color: color.scale($color-bg-dark, $lightness: 6%);
+      border-color: color.scale($color-bg-dark, $lightness: 6%);
+      transform: translateY(-1px);
+      box-shadow: $shadow-soft;
+    }
+  }
+
+  &--ghost {
+    background-color: rgba(15, 23, 42, 0.32);
+    color: $color-white;
+    border-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+
+    &:hover,
+    &:focus-visible {
+      background-color: rgba(15, 23, 42, 0.5);
+      border-color: $color-white;
+      transform: translateY(-1px);
+    }
+  }
+
+  &--wide {
+    width: 100%;
+
+    @include respond(tablet) {
+      width: auto;
+      min-width: 13rem;
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  color: $color-white;
+  padding: $space-6 $space-0;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4)),
+    url('/assets/images/motorcycle-training-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include respond(desktop) {
+    min-height: 78vh;
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      filter: blur(3px);
+      object-fit: cover;
+      object-position: right;
+    }
+    
+    .overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+
+      background-color: #1b1813d3;
+      pointer-events: none;
+    }
+  }
+
+
+
+  &__content {
+    position: relative;
+    max-width: 50rem;
+  }
+
+  &__eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: $space-2;
+  }
+
+  &__headline {
+    font-size: 1.9rem;
+    line-height: 1.1;
+    margin-bottom: $space-2;
+
+    @include respond(tablet) {
+      font-size: 2.4rem;
+    }
+
+    @include respond(desktop) {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__subheadline {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: $space-4;
+
+    @include respond(tablet) {
+      font-size: 1.05rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+    margin-bottom: $space-3;
+
+    @include respond(tablet) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__note {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+}
+
+.features {
+  display: grid;
+  gap: $space-3;
+  margin-top: $space-3;
+
+  @include respond(tablet) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: $space-4;
+  }
+}
+
+.feature-card {
+  background-color: $color-white;
+  border-radius: $radius-lg;
+  padding: $space-4;
+  box-shadow: $shadow-soft;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  transition:
+    transform $transition-fast,
+    box-shadow $transition-fast,
+    border-color $transition-fast,
+    background-color $transition-fast;
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.2);
+    border-color: rgba(255, 122, 0, 0.4);
+    background-color: #fdfbf7;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 122, 0, 0.08);
+    color: $color-primary;
+    font-size: 1.4rem;
+    margin-bottom: $space-3;
+  }
+
+  &__title {
+    font-size: 1.05rem;
+    margin-bottom: $space-2;
+  }
+
+  &__text {
+    font-size: 0.95rem;
+    color: $color-text-soft;
+  }
+}
+
+.pricing {
+  display: grid;
+  gap: $space-3;
+  margin-top: $space-3;
+
+  @include respond(tablet) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: $space-4;
+  }
+}
+
+.pricing-card {
+  background-color: $color-white;
+  border-radius: $radius-lg;
+  padding: $space-4;
+  box-shadow: $shadow-soft;
+  border: 1px solid $color-border-subtle;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  transition:
+    transform $transition-fast,
+    box-shadow $transition-fast,
+    border-color $transition-fast,
+    background-color $transition-fast;
+
+  &--recommended {
+    border-color: $color-primary;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 122, 0, 0.06),
+      $color-white 50%
+    );
+    transform: translateY(-3px);
+
+    @include respond(tablet) {
+      transform: translateY(-6px);
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+    border-color: $color-primary;
+  }
+
+  &__header {
+    margin-bottom: $space-2;
+  }
+
+  &__title {
+    font-size: 1.05rem;
+    margin-bottom: $space-1;
+  }
+
+  &__level {
+    font-size: 0.85rem;
+    color: $color-text-soft;
+    margin-bottom: $space-1;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background-color: $color-primary;
+    color: $color-bg-dark;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  &__price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: $space-1;
+  }
+
+  &__price-amount {
+    color: $color-primary;
+  }
+
+  &__duration {
+    font-size: 0.9rem;
+    color: $color-text-soft;
+    margin-bottom: $space-1;
+  }
+
+  &__description {
+    font-size: 0.95rem;
+    color: $color-text-soft;
+    margin-bottom: $space-2;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 $space-3;
+    font-size: 0.9rem;
+    color: $color-text-soft;
+
+    li + li {
+      margin-top: 0.3rem;
+    }
+
+    li::before {
+      content: '•';
+      color: $color-primary;
+      display: inline-block;
+      width: 1.1rem;
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+  }
+}
+
+.testimonials {
+  display: grid;
+  gap: $space-3;
+  margin-top: $space-3;
+
+  @include respond(tablet) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: $space-4;
+  }
+
+  @include respond(desktop) {
+    gap: $space-5;
+  }
+}
+
+.testimonial-card {
+  background-color: $color-white;
+  border-radius: $radius-lg;
+  padding: $space-4;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform $transition-fast,
+    box-shadow $transition-fast,
+    border-color $transition-fast;
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.22);
+    border-color: $color-primary;
+  }
+
+  &::before {
+    content: '“';
+    position: absolute;
+    top: $space-3;
+    right: $space-4;
+    font-size: 3rem;
+    color: rgba(148, 163, 184, 0.25);
+    line-height: 1;
+  }
+
+  &__name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  &__result {
+    font-size: 0.85rem;
+    color: $color-primary;
+    margin-bottom: $space-2;
+  }
+
+  &__message {
+    font-size: 0.95rem;
+    color: $color-text-soft;
+  }
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  align-items: stretch;
+  justify-content: space-between;
+
+  @include respond(tablet) {
+    flex-direction: row;
+    align-items: center;
+    gap: $space-4;
+  }
+
+  &__content {
+    max-width: 30rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: $space-2;
+
+    @include respond(tablet) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__text {
+    font-size: 0.95rem;
+    color: rgba($color-white, 0.9);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+    align-items: flex-start;
+
+    @include respond(tablet) {
+      align-items: flex-end;
+    }
+  }
+
+  &__link {
+    font-size: 0.9rem;
+    color: $color-accent;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color $transition-fast;
+
+    &:hover,
+    &:focus-visible {
+      color: color.scale($color-accent, $lightness: 10%);
+    }
+  }
+}
+
+

@@ -1,0 +1,314 @@
+@use '../../../styles.scss' as *;
+@use 'sass:color';
+
+.about {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: $color-text;
+  background-color: $color-bg-light;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin-inline: auto;
+  padding-inline: $space-3;
+}
+
+.about__hero {
+  padding: $space-5 $space-0 $space-4;
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 122, 0, 0.22),
+      transparent 55%
+    ),
+    linear-gradient(135deg, #0b1120, #111827);
+  color: $color-white;
+
+  @include respond(tablet) {
+    padding: ($space-6 * 1.1) $space-0 $space-6;
+  }
+}
+
+.about__hero-inner {
+  max-width: 46rem;
+}
+
+.about__eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: $space-2;
+}
+
+.about__title {
+  font-size: 1.9rem;
+  line-height: 1.15;
+  margin-bottom: $space-2;
+
+  @include respond(tablet) {
+    font-size: 2.3rem;
+  }
+
+  @include respond(desktop) {
+    font-size: 2.6rem;
+  }
+}
+
+.about__subtitle {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: rgba($color-white, 0.92);
+}
+
+.about__section {
+  padding: $space-5 $space-0;
+  background-color: $color-bg-light;
+
+  &--muted {
+    background-color: $color-bg-muted;
+  }
+
+  @include respond(desktop) {
+    padding: ($space-6 * 1.1) $space-0;
+  }
+}
+
+.about__section-header {
+  max-width: 40rem;
+  margin-inline: auto;
+  text-align: left;
+
+  @include respond(tablet) {
+    text-align: center;
+  }
+}
+
+.about__section-title {
+  font-size: 1.4rem;
+  margin-bottom: $space-2;
+
+  @include respond(tablet) {
+    font-size: 1.8rem;
+  }
+}
+
+.about__section-intro {
+  font-size: 0.96rem;
+  color: $color-text-soft;
+  padding-bottom: 12px;
+}
+
+.about__grid {
+  display: grid;
+  gap: $space-4;
+  align-items: flex-start;
+  margin-top: $space-4;
+
+  @include respond(tablet) {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: $space-5;
+  }
+}
+
+.about__aside {
+  @include respond(tablet) {
+    justify-self: flex-end;
+  }
+}
+
+.about__image-placeholder {
+  min-height: 220px;
+  border-radius: $radius-lg;
+  border: 1px dashed rgba($color-bg-dark, 0.35);
+  background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.02),
+      rgba(15, 23, 42, 0.08)
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(15, 23, 42, 0.03),
+      rgba(15, 23, 42, 0.03) 8px,
+      transparent 8px,
+      transparent 14px
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-4;
+  text-align: center;
+  color: $color-text-soft;
+  font-size: 0.9rem;
+}
+
+.about__bikes {
+  display: grid;
+  gap: $space-3;
+  margin-top: $space-4;
+
+  @include respond(tablet) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: $space-4;
+  }
+}
+
+.card {
+  background-color: $color-white;
+  border-radius: $radius-lg;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: $shadow-soft;
+  padding: $space-4;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  transition:
+    transform $transition-fast,
+    box-shadow $transition-fast,
+    border-color $transition-fast,
+    background-color $transition-fast;
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+    border-color: rgba(255, 122, 0, 0.35);
+    background-color: #fdfbf7;
+  }
+
+  &--instructor {
+    @include respond(desktop) {
+      padding: ($space-4 * 1.1);
+    }
+  }
+
+  &--bike {
+    align-self: stretch;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    margin-bottom: $space-1;
+  }
+
+  &__avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    background: radial-gradient(
+      circle at 20% 0,
+      rgba(255, 200, 87, 0.6),
+      rgba(255, 122, 0, 0.9)
+    );
+    color: $color-bg-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  &__title {
+    font-size: 1.05rem;
+    margin-bottom: 0.15rem;
+  }
+
+  &__title--bike {
+    font-size: 1rem;
+  }
+
+  &__meta {
+    font-size: 0.85rem;
+    color: $color-text-soft;
+  }
+
+  &__text {
+    color: $color-text-soft;
+    margin-top: $space-1;
+  }
+
+  &__list-wrapper {
+    margin-top: $space-2;
+  }
+
+  &__list-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    color: $color-text-soft;
+
+    li + li {
+      margin-top: 0.25rem;
+    }
+
+    li::before {
+      content: '•';
+      color: $color-primary;
+      display: inline-block;
+      width: 1.1rem;
+    }
+  }
+
+  &__footnote {
+    font-size: 0.85rem;
+    color: $color-text-soft;
+
+    span {
+      display: block;
+      margin-top: 0.2rem;
+    }
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background-color: rgba(255, 122, 0, 0.12);
+    color: $color-primary;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  &__note {
+    font-size: 0.88rem;
+    color: $color-text-soft;
+
+    span {
+      display: block;
+      margin-top: 0.2rem;
+    }
+  }
+
+  &__image-placeholder {
+    margin-top: $space-3;
+    padding: $space-3;
+    border-radius: $radius-md;
+    border: 1px dashed rgba($color-border-subtle, 0.8);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 122, 0, 0.02),
+        rgba(255, 122, 0, 0.06)
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(15, 23, 42, 0.02),
+        rgba(15, 23, 42, 0.02) 8px,
+        transparent 8px,
+        transparent 16px
+      );
+    font-size: 0.82rem;
+    color: $color-text-soft;
+    text-align: center;
+  }
+}
+

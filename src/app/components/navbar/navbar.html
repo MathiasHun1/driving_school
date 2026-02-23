@@ -1,0 +1,77 @@
+<header class="home-header">
+  <div class="container home-header__inner">
+    <div class="home-header__brand">
+      <span class="home-header__logo" aria-hidden="true">
+        <img
+          class="home-header__logo-image"
+          src="logo.png"
+          alt="RoadStart Motorcycle School"
+          width="72"
+          height="72"
+        />
+      </span>
+    </div>
+
+    <!-- Mobile hamburger toggle -->
+    <button
+      type="button"
+      class="home-header__toggle"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-controls="primary-navigation"
+      aria-label="Toggle navigation"
+    >
+      <span class="home-header__toggle-bar"></span>
+      <span class="home-header__toggle-bar"></span>
+      <span class="home-header__toggle-bar"></span>
+    </button>
+
+    <!-- Desktop navigation -->
+    <nav
+      id="primary-navigation"
+      class="home-header__nav home-header__nav--desktop"
+      aria-label="Primary navigation"
+    >
+      <a
+        routerLink="/"
+        class="home-header__link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        {{ 'HOME' | translate }}
+      </a>
+      <a
+        routerLink="/about"
+        class="home-header__link"
+        routerLinkActive="active"
+      >
+        {{ 'ABOUT' | translate}}
+      </a>
+    </nav>
+  </div>
+
+  <!-- Mobile navigation panel -->
+    <nav
+      class="home-header__nav home-header__nav--mobile"
+      [class.transformed]="!isMenuOpen"
+      aria-label="Primary navigation"
+    >
+      <a
+        routerLink="/"
+        class="home-header__link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+      >
+        {{ 'HOME' | translate }}
+      </a>
+      <a
+        routerLink="/about"
+        class="home-header__link"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        {{ 'ABOUT' | translate}}
+      </a>
+    </nav>
+</header>
