@@ -2,13 +2,12 @@
   <section class="about__hero" aria-labelledby="about-heading">
     <div class="container about__hero-inner">
       <header>
-        <p class="about__eyebrow">About our training</p>
+        <p class="about__eyebrow">{{ 'ABOUT_THE_TRAINING' | translate}}</p>
         <h1 id="about-heading" class="about__title">
-          Meet your instructor and our training motorcycles
+          {{ 'MEET_YOUR_INSTRUCTOR' | translate}}
         </h1>
         <p class="about__subtitle">
-          A calm, structured learning environment with motorcycles matched to each
-          license category, so you always train on the right bike for your level.
+          {{ 'ENVIRONMENT' | translate}}
         </p>
       </header>
     </div>
@@ -21,11 +20,10 @@
           id="instructor-heading"
           class="about__section-title"
         >
-          Your instructor
+          {{ 'YOUR_INSTRUCTOR' | translate }}
         </h2>
         <p class="about__section-intro">
-          You learn best when you feel safe, heard, and never rushed. Our training
-          is built around that idea.
+          {{ 'YOU_LEARN_BEST' | translate}}
         </p>
 
         <article class="card card--instructor">
@@ -35,15 +33,15 @@
               <span>{{ instructor.name[0] }}</span>
             </div>
             <div>
-              <h3 class="card__title">{{ instructor.name }}</h3>
+              <h3 class="card__title">Fekete Zoltán</h3>
               <p class="card__meta">
-                {{ instructor.experienceYears }}+ years of motorcycle instruction
+               {{ 'TEN_YEARS' | translate}}
               </p>
             </div>
           </div>
 
           <p class="card__text">
-            {{ instructor.description }}
+            {{ instructor.description | translate}}
           </p>
 
           <div class="card__list-wrapper">
@@ -77,47 +75,47 @@
     <div class="container">
       <header class="about__section-header">
         <h2 id="bikes-heading" class="about__section-title">
-          Motorcycles for each license category
+          {{ 'MOTORCYCLES_FOR_EACH_CATEGORY' | translate}}
         </h2>
         <p class="about__section-intro">
-          We carefully select bikes that match the power and handling requirements of
-          each category, so you can focus on learning, not fighting the motorcycle.
+          {{ 'SELECTED_BIKES' | translate}}
         </p>
       </header>
 
       <div class="about__bikes">
-        <article
+        @for (category of categories; track category) {
+
+          <article
           class="card card--bike"
-          *ngFor="let category of categories"
-          aria-labelledby="{{ category.code }}-heading"
-        >
+          >
           <header class="card__header">
             <div class="card__badge">{{ category.code }}</div>
             <div>
               <h3
-                class="card__title card__title--bike"
-                [id]="category.code + '-heading'"
+              class="card__title card__title--bike"
+              [id]="category.code + '-heading'"
               >
-                {{ category.title }}
-              </h3>
-              <p class="card__meta">Power: {{ category.power }}</p>
-            </div>
-          </header>
-
-          <p class="card__text">
-            {{ category.bikeDescription }}
-          </p>
-
-          <p class="card__note">
-            Ideal for:
-            <span>{{ category.idealFor }}</span>
-          </p>
-
-          <div class="card__image-placeholder" aria-hidden="true">
-            <!-- Placeholder area for bike photo -->
-            <span>Bike image placeholder ({{ category.code }})</span>
+              {{ category.title | translate}}
+            </h3>
+            <p class="card__meta">{{ 'POWER' | translate}}: {{ category.power }}</p>
           </div>
-        </article>
+        </header>
+        
+        <p class="card__text">
+          {{ category.bikeDescription | translate}}
+        </p>
+        
+        <p class="card__note">
+          {{ 'IDEAL_FOR' | translate}}
+          <span>{{ category.idealFor | translate}}</span>
+        </p>
+        
+        <div class="card__image-placeholder" aria-hidden="true">
+          <!-- Placeholder area for bike photo -->
+          <span>Bike image placeholder ({{ category.code }})</span>
+        </div>
+      </article>
+    }
       </div>
     </div>
   </section>

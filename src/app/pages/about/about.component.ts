@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   standalone: true,
   selector: 'app-about',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -14,7 +15,7 @@ export class AboutComponent {
     name: 'Zoltán Kovács',
     experienceYears: 14,
     description:
-      'Zoltán is a patient, safety-focused instructor who has helped hundreds of beginners earn their motorcycle license. His approach breaks complex skills into simple, repeatable steps so you always know what to practice next.',
+      'ZOLI_DESC',
     certifications: [
       'State-certified motorcycle driving instructor',
       'Advanced rider safety and defensive riding courses',
@@ -27,29 +28,29 @@ export class AboutComponent {
   readonly categories = [
     {
       code: 'A1',
-      title: 'Light motorcycles (A1)',
+      title: 'A1_CAT',
       power: 'Up to 11 kW (125 cm³)',
-      idealFor: 'Young riders and commuters taking their first steps on two wheels.',
+      idealFor: 'A1_SUB',
       bikeDescription:
-        'We use lightweight, forgiving 125cc training bikes that are easy to balance and ideal for first-time riders.',
+        'A1_DESC',
     },
     {
       code: 'A2',
-      title: 'Mid-size motorcycles (A2)',
+      title: 'A2_CAT',
       power: 'Up to 35 kW',
       idealFor:
-        'Riders who want more power and plan to ride on highways or longer distances.',
+        'A2_SUB',
       bikeDescription:
-        'Our A2 bikes are restricted mid-size motorcycles that offer real-world performance while remaining beginner-friendly.',
+        'A2_DESC',
     },
     {
       code: 'A',
-      title: 'Full power motorcycles (A)',
+      title: 'A_CAT',
       power: 'No power limit',
       idealFor:
-        'Experienced riders or upgrade courses for those who already hold A2 and want full access.',
+        'A_SUB',
       bikeDescription:
-        'We provide well-balanced touring and naked bikes so you can safely experience full-power riding under supervision.',
+        'A_DESC',
     },
   ];
 }

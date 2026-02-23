@@ -132,17 +132,17 @@
       </header>
 
       <div class="testimonials">
-        <article class="testimonial-card" >
-          @for (testimonial of testimonials; track testimonial) {
-            <h3 class="testimonial-card__name">{{ testimonial.name }}</h3>
-            <p class="testimonial-card__result">
-              {{ testimonial.result }}
-            </p>
-            <p class="testimonial-card__message">
-              “{{ testimonial.message }}”
-            </p>
-          }
-        </article>
+        @for (testimonial of testimonials; track testimonial) {
+          <article class="testimonial-card" >
+              <h3 class="testimonial-card__name">{{ testimonial.name }}</h3>
+              <p class="testimonial-card__result">
+                {{ testimonial.result }}
+              </p>
+              <p class="testimonial-card__message">
+                “{{ testimonial.message }}”
+              </p>
+            </article>
+        }
       </div>
     </div>
   </section>
@@ -152,19 +152,18 @@
     <div class="container cta">
       <div class="cta__content">
         <h2 id="cta-heading" class="cta__title">
-          Ready to start your motorcycle journey?
+          {{ 'READY_TO_START' | translate }}
         </h2>
         <p class="cta__text">
-          Tell us when you would like to begin and we will match you with the right
-          instructor and training plan.
+          {{ 'TELL_US_WHEN_YOU_LIKE_TO_START' | translate}}
         </p>
       </div>
       <div class="cta__actions">
         <a href="tel:+1234567890" class="btn btn--primary btn--wide">
-          Call now to schedule
+          {{ 'CALL_TO_SCHEDULE' | translate}}
         </a>
         <a href="mailto:info@motorcycleridingschool.example" class="cta__link">
-          Or email us your questions
+          {{ 'OR_EMAIL' | translate }}
         </a>
       </div>
     </div>
