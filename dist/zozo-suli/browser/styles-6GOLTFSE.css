@@ -1,0 +1,1 @@
+*{box-sizing:border-box;margin:0;padding:0}*,*:before,*:after{box-sizing:border-box}:root{--hero-height: 110px}@media(min-width:48rem){:root{--hero-height: 136px}}body{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color:#111827;background-color:#f7fafc;overflow-x:hidden}img{display:block;width:100%;height:100%}

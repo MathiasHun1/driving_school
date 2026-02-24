@@ -41,7 +41,11 @@ $bp-tablet: 48rem; // 768px
 $bp-desktop: 75rem; // 1200px
 
 @mixin respond($breakpoint) {
-  @if $breakpoint == tablet {
+  @if ($breakpoint == mobile) {
+    @media (min-width: $bp-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
     @media (min-width: $bp-tablet) {
       @content;
     }
@@ -61,6 +65,13 @@ $bp-desktop: 75rem; // 1200px
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+:root {
+  --hero-height: 110px;
+  @include respond(tablet) {
+    --hero-height: 136px;
+  }
 }
 
 body {

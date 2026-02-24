@@ -12,14 +12,20 @@
     flex-direction: column;
     gap: 2rem;
     justify-content: space-between;
-    padding-inline: 4rem;
+    padding-inline: 1rem;
 
     @include respond(tablet) {
       flex-direction: row;
     }
 
     .block {
-      width: fit-content;
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      
+      @include respond(tablet) {
+        justify-content: center;
+      }
     }
   }
 
@@ -58,6 +64,7 @@
     }
   }
 
+  
   &__social-list {
     list-style: none;
     padding-left: 0;
@@ -65,9 +72,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: $space-1;
-
-
+    
+    
     a {
+      display: grid;
+      place-content: center;
       font-size: 0.9rem;
       color: rgba($color-white, 0.9);
       text-decoration: none;
@@ -75,22 +84,35 @@
       border-radius: 999px;
       border: 1px solid rgba($color-white, 0.18);
       transition:
-        background-color $transition-fast,
-        color $transition-fast,
+      background-color $transition-fast,
+      color $transition-fast,
         border-color $transition-fast,
         transform $transition-fast;
-
-      &:hover,
-      &:focus-visible {
-        background-color: $color-primary;
-        color: $color-bg-dark;
-        border-color: transparent;
-        transform: translateY(-1px);
+        
+        &:hover,
+        &:focus-visible {
+          background-color: #1877F2;
+          color: white;
+          border-color: transparent;
+          transform: translateY(-1px);
+        }
       }
     }
+    
+    &__social {
+      display: flex;
+      justify-content: center !important;
+      @include respond(mobile) {
+        justify-content: revert;
+      }
+    }
+
+    .social-heading {
+      margin-bottom: 12px !important;
+      display: none;
+      @include respond(tablet) {
+        display: revert;
+      }
   }
 
-  .social-heading {
-      margin-bottom: 12px !important;
-  }
 }

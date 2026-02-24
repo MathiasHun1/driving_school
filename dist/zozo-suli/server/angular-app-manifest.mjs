@@ -8,14 +8,14 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-ZFJ4T64J.js"
+      "chunk-JXT3VIMI.js"
     ],
     "route": "/"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-XT4OG4FC.js"
+      "chunk-NGC6R4FA.js"
     ],
     "route": "/about"
   },
@@ -27,10 +27,10 @@ export default {
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 892, hash: '1251b621a5aa51eeb503783cc14880af3d854ae442d2ea623a5fd2191288bf5c', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 1058, hash: 'cd1e4deba80022ede7cfa9b7dc22ea5f7fe57f959d6492873092b2ba6fea4f0f', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'about/index.html': {size: 23340, hash: '39320fd5a99c9c3c42e01297f4337215289cdb0358ca1ea037fb8dc3c67e1a92', text: () => import('./assets-chunks/about_index_html.mjs').then(m => m.default)},
-    'index.html': {size: 30991, hash: 'fc285c817b667794776003ffdcf753d4bcb348dadd84ead3d0da6c7a574c229a', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
-    'styles-CA6AKGQ2.css': {size: 263, hash: 'yqulco3HY9Y', text: () => import('./assets-chunks/styles-CA6AKGQ2_css.mjs').then(m => m.default)}
+    'index.csr.html': {size: 969, hash: '49e1019801ddf97c13c0ebcb76ea48f564937a7d87ce98e7e9031d4e99319c65', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 1058, hash: 'a5c89524408e1600cd05249c404dc28a9b140b660908da25d8e294b4c919b2fd', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'about/index.html': {size: 25028, hash: '4c1b4f3a8b02501108006ff0a283ec65e887313937da464ac2ec45a78dfd98c5', text: () => import('./assets-chunks/about_index_html.mjs').then(m => m.default)},
+    'index.html': {size: 32545, hash: '8224f0642f6a83e723f38098650066056aaab8172b175e9c955386128f967768', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'styles-6GOLTFSE.css': {size: 342, hash: 'nVjsfEMHHSQ', text: () => import('./assets-chunks/styles-6GOLTFSE_css.mjs').then(m => m.default)}
   },
 };

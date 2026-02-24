@@ -1,2 +1,0 @@
-export default `*{box-sizing:border-box;margin:0;padding:0}*,*:before,*:after{box-sizing:border-box}body{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color:#111827;background-color:#f7fafc;overflow-x:hidden}img{display:block;width:100%;height:100%}
-`;
