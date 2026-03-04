@@ -1,7 +1,11 @@
 ﻿@use '../../../styles.scss' as *;
 
+:host {
+  --header-top-height: 140px;
+}
+
 .site-header {
-  //position: fixed;
+  position: fixed;
   inset: 0 0 auto;
   z-index: 30;
   backdrop-filter: blur(10px);
@@ -9,16 +13,21 @@
   border-bottom: 1px solid var(--line);
 
   &__top {
-    min-height: var(--header-height);
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
     justify-content: space-between;
     gap: 0.8rem;
+    padding-bottom: 12px;
+    height: var(--header-top-height);
 
     @include respond(tablet) {
       grid-template-columns: auto 1fr auto;
     }
+  }
+
+  &__nav {
+    padding-top: 12px;
   }
 
   &__nav,
@@ -67,14 +76,13 @@
 }
 
 .brand {
-  display: inline-flex;
+  width: 120px;
+  display: block;
   align-items: center;
   gap: 0.65rem;
   text-decoration: none;
 
   img {
-    width: 3.5rem;
-    height: 3.5rem;
     border-radius: 0.6rem;
   }
 
