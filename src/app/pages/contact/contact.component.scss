@@ -1,0 +1,61 @@
+﻿@use '../../../styles.scss' as *;
+
+.contact-grid {
+  display: grid;
+  gap: 0.95rem;
+
+  @include respond(tablet) {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+.details {
+  &__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent-deep);
+    font-size: 0.75rem;
+  }
+
+  h1 {
+    margin: 0.5rem 0 0.85rem;
+    font-size: clamp(1.8rem, 4vw, 2.9rem);
+  }
+
+  p {
+    margin-bottom: 0.6rem;
+    color: var(--ink-700);
+  }
+
+  a {
+    color: var(--ink-900);
+    font-weight: 700;
+  }
+}
+
+.map-placeholder {
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  p {
+    color: var(--ink-700);
+    margin: 0.55rem 0 1rem;
+  }
+
+  &__box {
+    min-height: 13rem;
+    border: 1px dashed #ccb18d;
+    border-radius: 0.9rem;
+    display: grid;
+    place-items: center;
+    background: repeating-linear-gradient(
+      -45deg,
+      #fcf4e8,
+      #fcf4e8 10px,
+      #fff 10px,
+      #fff 20px
+    );
+    color: var(--ink-600);
+  }
+}

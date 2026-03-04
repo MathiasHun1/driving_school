@@ -1,0 +1,30 @@
+﻿.kresz {
+  &__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent-deep);
+    font-size: 0.75rem;
+  }
+
+  h1 {
+    margin: 0.45rem 0 0.85rem;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+  }
+
+  p {
+    color: var(--ink-700);
+    max-width: 48rem;
+  }
+
+  ul {
+    margin-top: 0.85rem;
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  li::before {
+    content: '• ';
+    color: var(--accent);
+  }
+}

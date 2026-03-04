@@ -1,0 +1,24 @@
+﻿.category {
+  &__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent-deep);
+    font-size: 0.75rem;
+  }
+
+  h1 {
+    margin: 0.45rem 0 0.9rem;
+    font-size: clamp(1.8rem, 4vw, 2.9rem);
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  li::before {
+    content: '• ';
+    color: var(--accent);
+  }
+}

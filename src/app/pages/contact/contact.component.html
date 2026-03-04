@@ -1,0 +1,23 @@
+﻿<main class="page page-shell">
+  <section class="container contact-grid">
+    <article class="panel details">
+      <p class="details__kicker">Kapcsolat</p>
+      <h1>{{ contact.school }}</h1>
+      <p>
+        Cím: <strong>{{ contact.address }}</strong>
+      </p>
+      <p>
+        Telefon: <a href="tel:+36309382689">{{ contact.phone }}</a>
+      </p>
+      <p>
+        E-mail: <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+      </p>
+    </article>
+
+    <article class="panel map-placeholder" aria-label="Térkép helye">
+      <h2>Helyszín</h2>
+      <p>Gödöllő központ, könnyen megközelíthető oktatási pont.</p>
+      <div class="map-placeholder__box">Térkép beágyazás helye</div>
+    </article>
+  </section>
+</main>

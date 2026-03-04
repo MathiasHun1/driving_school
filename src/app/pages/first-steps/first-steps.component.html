@@ -1,0 +1,14 @@
+﻿<main class="page page-shell">
+  <section class="container">
+    <header class="head">
+      <p>Első lépés</p>
+      <h1>Így indul a képzés folyamata</h1>
+    </header>
+
+    <ol class="panel list">
+      @for (item of steps; track item) {
+        <li>{{ item }}</li>
+      }
+    </ol>
+  </section>
+</main>

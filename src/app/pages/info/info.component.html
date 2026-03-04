@@ -1,0 +1,18 @@
+﻿<main class="page page-shell">
+  <section class="container">
+    <header class="head">
+      <p>Tájékoztató</p>
+      <h1>Minden fontos információ egy helyen</h1>
+      <span>Válaszd ki a témát és nézd át a kategóriádhoz tartozó részleteket.</span>
+    </header>
+
+    <div class="links">
+      @for (item of links; track item.path) {
+        <a [routerLink]="item.path" class="panel link-card">
+          <h2>{{ item.label }}</h2>
+          <p>Megnyitás</p>
+        </a>
+      }
+    </div>
+  </section>
+</main>

@@ -1,0 +1,52 @@
+﻿@use '../../../styles.scss' as *;
+
+.head {
+  margin-bottom: 1.4rem;
+
+  p {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent-deep);
+    font-size: 0.75rem;
+  }
+
+  h1 {
+    margin: 0.5rem 0;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+  }
+
+  span {
+    color: var(--ink-600);
+  }
+}
+
+.links {
+  display: grid;
+  gap: 0.8rem;
+
+  @include respond(tablet) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.link-card {
+  text-decoration: none;
+  color: var(--ink-900);
+  min-height: 9rem;
+  display: grid;
+  align-content: space-between;
+  background: linear-gradient(130deg, #fff, #f5ece1);
+  transition: 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  p {
+    color: var(--ink-600);
+  }
+}

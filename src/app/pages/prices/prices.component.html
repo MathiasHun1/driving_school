@@ -1,0 +1,25 @@
+﻿<main class="page page-shell">
+  <section class="container prices-page">
+    <header class="section-head">
+      <p>Árak</p>
+      <h1>Kategóriánkénti képzési díjak</h1>
+      <span>Az alábbi bontás a mocisuli.hu jelenlegi árlistáját követi.</span>
+    </header>
+
+    <section class="price-grid" aria-label="Árlista">
+      <div class="price-grid__header">Kategória</div>
+      <div class="price-grid__header">Elmélet / Adminisztrációs költség</div>
+      <div class="price-grid__header">Gyakorlat</div>
+      <div class="price-grid__header">Összesen</div>
+
+      @for (row of rows; track row.category) {
+        <div class="price-grid__cell price-grid__cell--category">{{ row.category }}</div>
+        <div class="price-grid__cell">{{ formatHuf(row.theoryAdmin) }}</div>
+        <div class="price-grid__cell">{{ formatHuf(row.practice) }}</div>
+        <div class="price-grid__cell price-grid__cell--total">{{ formatHuf(row.total) }}</div>
+      }
+    </section>
+
+    <p class="note">Felnőttképzési ny. szám: FKB/2020/008913</p>
+  </section>
+</main>

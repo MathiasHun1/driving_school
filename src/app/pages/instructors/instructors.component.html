@@ -1,0 +1,23 @@
+﻿<main class="page page-shell">
+  <section class="container">
+    <header class="head">
+      <p>Oktatók</p>
+      <h1>Tapasztalt, türelmes szakoktatók</h1>
+    </header>
+
+    <div class="cards">
+      @for (teacher of cards; track teacher.name) {
+        <article class="panel card">
+          <p class="card__role">{{ teacher.role }}</p>
+          <h2>{{ teacher.name }}</h2>
+          <p class="card__bio">{{ teacher.bio }}</p>
+          <ul>
+            @for (item of teacher.specialties; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </section>
+</main>
