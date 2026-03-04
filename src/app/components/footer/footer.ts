@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+﻿import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { contactData, infoNav, primaryNav } from '../../content/site-content';
 
 @Component({
   selector: 'app-footer',
-  imports: [TranslatePipe],
+  imports: [RouterLink],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
 export class Footer {
-  readonly currentYear = new Date().getFullYear();
+  readonly year = new Date().getFullYear();
+  readonly contact = contactData;
+  readonly nav = primaryNav;
+  readonly info = infoNav;
 }

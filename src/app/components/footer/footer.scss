@@ -1,118 +1,46 @@
-@use '../../../styles.scss' as *;
-@use 'sass:color';
+﻿.site-footer {
+  background: linear-gradient(150deg, #081426, #112947);
+  color: #f0f5ff;
+  margin-top: 2rem;
 
+  &__grid {
+    padding: 2rem 0;
+    display: grid;
+    gap: 1rem;
 
-.footer {
-  background-color: #020617;
-  color: rgba($color-white, 0.9);
-  padding: $space-4 $space-0;
-
-  &__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    justify-content: space-between;
-    padding-inline: 1rem;
-
-    @include respond(tablet) {
-      flex-direction: row;
-    }
-
-    .block {
-      flex: 1;
-      display: flex;
-      justify-content: flex-start;
-      
-      @include respond(tablet) {
-        justify-content: center;
-      }
+    @media (min-width: 48rem) {
+      grid-template-columns: 1.2fr 1fr 1fr;
     }
   }
 
-  &__brand {
-    font-size: 0.9rem;
+  h3,
+  h4 {
+    margin-bottom: 0.7rem;
   }
 
-  &__name {
-    font-weight: 600;
-    margin-bottom: 0.25rem;
+  p {
+    color: rgba(240, 245, 255, 0.86);
+    margin-bottom: 0.45rem;
   }
 
-  &__copy {
-    font-size: 0.8rem;
-    color: rgba($color-white, 0.7);
+  a {
+    color: #fff;
+    text-decoration: none;
   }
 
-  &__heading {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: $space-1;
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 0.9rem 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.86rem;
   }
+}
 
-  &__contact {
-    font-size: 0.9rem;
+.links {
+  display: grid;
+  gap: 0.4rem;
 
-    a {
-      color: rgba($color-white, 0.95);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-
-      &:hover,
-      &:focus-visible {
-        color: $color-accent;
-      }
-    }
+  a {
+    width: fit-content;
   }
-
-  
-  &__social-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: $space-1;
-    
-    
-    a {
-      display: grid;
-      place-content: center;
-      font-size: 0.9rem;
-      color: rgba($color-white, 0.9);
-      text-decoration: none;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba($color-white, 0.18);
-      transition:
-      background-color $transition-fast,
-      color $transition-fast,
-        border-color $transition-fast,
-        transform $transition-fast;
-        
-        &:hover,
-        &:focus-visible {
-          background-color: #1877F2;
-          color: white;
-          border-color: transparent;
-          transform: translateY(-1px);
-        }
-      }
-    }
-    
-    &__social {
-      display: flex;
-      justify-content: center !important;
-      @include respond(mobile) {
-        justify-content: revert;
-      }
-    }
-
-    .social-heading {
-      margin-bottom: 12px !important;
-      display: none;
-      @include respond(tablet) {
-        display: revert;
-      }
-  }
-
 }

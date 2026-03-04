@@ -1,105 +1,33 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '@ngx-translate/core';
-
-interface Feature {
-  title: string;
-  description: string;
-  icon: string;
-}
-
-interface TrainingPackage {
-  name: string;
-  description: string;
-  price: string;
-  duration: string;
-  level: string;
-  isRecommended?: boolean;
-}
-
-interface Testimonial {
-  name: string;
-  result: string;
-  message: string;
-}
+﻿import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [CommonModule, TranslatePipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  readonly features: Feature[] = [
+  readonly offerings = [
     {
-      title: 'CERTIFIED_INSTRUCTORS' ,
-      description:
-        'LEARN_FROM_PATIENT_INSTRUCTORS',
-      icon: '🎓',
+      title: 'Kiemelkedő oktatóink',
+      text: 'Tapasztalt, szakértő instruktőreink segítenek Önnek elsajátítani a motorozás művészetét. Képzett és elhivatott oktatóink olyan tudással és készségekkel rendelkeznek, amelyek szükségesek a biztonságos és örömteli motorozáshoz.',
     },
     {
-      title: 'MODERN_TRAINING_BIKES',
-      description:
-        'TRAIN_ON_WELL_MAINTAINED_BIKES',
-      icon: '🏍️',
+      title: 'Képzések minden szinten',
+      text: 'Legyen Ön kezdő vagy haladó motoros, nálunk megtalálja a megfelelő tanfolyamot. A kezdetektől az új kihívásokig segítünk növelni motoros képességeit.',
     },
     {
-      title: 'FLEXIBLE_SCHEDULES',
-      description:
-        '',
-      icon: '⏰',
-    },
-  ];
-
-  readonly trainingPackages: TrainingPackage[] = [
-    {
-      name: 'Starter Basics',
-      description:
-        'Perfect introduction to motorcycle controls, balance, and low-speed maneuvering.',
-      price: '€149',
-      duration: '4 hours total',
-      level: 'Complete beginners',
+      title: 'Biztonság és felelősség',
+      text: 'A biztonság mindig az elsődleges szempont, és a motorozás iránti szenvedélyt ötvözzük a felelős és tudatos vezetés oktatásával.',
     },
     {
-      name: 'Road-Ready License',
-      description:
-        'Our most popular course, guiding you from first ride to test-ready confidence.',
-      price: '€299',
-      duration: '10 hours total',
-      level: 'Beginners to test-ready',
-      isRecommended: true,
+      title: 'Közösség és élmények',
+      text: 'A MociSuli nemcsak egy tanulóhely, hanem egy motoros közösség is, ahol új barátokat talál és megoszthatja motorozási élményeit.',
     },
     {
-      name: 'Confidence Booster',
-      description:
-        'Refine advanced skills: emergency braking, cornering, and real traffic scenarios.',
-      price: '€189',
-      duration: '6 hours total',
-      level: 'Post-license / refresher',
-    },
-  ];
-
-  readonly testimonials: Testimonial[] = [
-    {
-      name: 'Anna, 27',
-      result: 'Passed on the first attempt',
-      message:
-        'I was nervous about riding, but the instructors broke everything down into simple, clear steps. I felt safe and supported the entire time.',
-    },
-    {
-      name: 'Mark, 34',
-      result: 'From zero to confident rider',
-      message:
-        'I had never been on a motorcycle before. By the final lesson I was riding confidently in traffic and actually enjoying it.',
-    },
-    {
-      name: 'Sara, 22',
-      result: 'Flexible around my schedule',
-      message:
-        'The evening and weekend lessons made it easy to fit training around my job. The school handled everything to get me test-ready.',
+      title: 'Személyre szabott megközelítés',
+      text: 'Minden tanulót egyedi igényekre szabottan kezelünk, így az oktatás teljesen az Ön igényeire épül.',
     },
   ];
 }
-

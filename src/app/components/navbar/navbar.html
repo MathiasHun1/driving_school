@@ -1,77 +1,29 @@
-<header class="home-header">
-  <div class="container home-header__inner">
-    <div class="home-header__brand">
-      <span class="home-header__logo" aria-hidden="true" routerLink="/">
-        <img
-          class="home-header__logo-image"
-          src="logo.png"
-          alt="RoadStart Motorcycle School"
-          width="72"
-          height="72"
-        />
-      </span>
-    </div>
+﻿<header class="site-header">
+  <div class="container site-header__top">
+    <a class="brand" routerLink="/" (click)="closeMenu()">
+      <img src="logo.png" alt="Mocisuli Gödöllő" width="88" height="88" />
+      <div>
+        <strong>Mocisuli</strong>
+        <span>Gödöllő</span>
+      </div>
+    </a>
 
-    <!-- Mobile hamburger toggle -->
-    <button
-      type="button"
-      class="home-header__toggle"
-      (click)="toggleMenu()"
-      [attr.aria-expanded]="isMenuOpen"
-      aria-controls="primary-navigation"
-      aria-label="Toggle navigation"
-    >
-      <span class="home-header__toggle-bar"></span>
-      <span class="home-header__toggle-bar"></span>
-      <span class="home-header__toggle-bar"></span>
+    <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen">
+      Menü
     </button>
 
-    <!-- Desktop navigation -->
-    <nav
-      id="primary-navigation"
-      class="home-header__nav home-header__nav--desktop"
-      aria-label="Primary navigation"
-    >
-      <a
-        routerLink="/"
-        class="home-header__link"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        {{ 'HOME' | translate }}
-      </a>
-      <a
-        routerLink="/about"
-        class="home-header__link"
-        routerLinkActive="active"
-      >
-        {{ 'ABOUT' | translate}}
-      </a>
-    </nav>
+    <div class="contact">
+      <a href="tel:+36309382689">06 30 938 26 89</a>
+      <small>2100 Gödöllő, Dózsa György út 13.</small>
+    </div>
   </div>
 
-  <!-- Mobile navigation panel -->
-    <nav
-      class="home-header__nav home-header__nav--mobile"
-      [class.transformed]="!isMenuOpen"
-      aria-label="Primary navigation"
-    >
-      <a
-        routerLink="/"
-        class="home-header__link"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        (click)="closeMenu()"
-      >
-        {{ 'HOME' | translate }}
+  <nav class="container site-header__nav" [class.is-open]="isMenuOpen">
+    @for (item of primary; track item.path) {
+      <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">
+        {{ item.label }}
       </a>
-      <a
-        routerLink="/about"
-        class="home-header__link"
-        routerLinkActive="active"
-        (click)="closeMenu()"
-      >
-        {{ 'ABOUT' | translate}}
-      </a>
-    </nav>
+    }
+  </nav>
+
 </header>

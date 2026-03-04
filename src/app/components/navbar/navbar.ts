@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { TranslatePipe } from '@ngx-translate/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { infoNav, primaryNav } from '../../content/site-content';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule, RouterModule, TranslatePipe],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-export class Navbar  {
+export class Navbar {
   isMenuOpen = false;
+  readonly primary = primaryNav;
+  readonly secondary = infoNav;
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;

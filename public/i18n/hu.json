@@ -18,7 +18,7 @@
   "READY_TO_START": "Készen állsz hogy belevágj a motoros kalandba?",
   "TELL_US_WHEN_YOU_LIKE_TO_START": "Mondd meg mikor kezdenél, mi pedig összeállítjuk a számodra ideális képzési tervet.",
   "CALL_TO_SCHEDULE": "Hívj időpontért",
-  "OR_EMAIL": "Vagy írd meg emailben kérdseid",
+  "OR_EMAIL": "Vagy írd meg emailben kérdéseid",
   "ALL_RIGHTS_RESERVED": "Minden jog fenntartva",
   "CONTACT": "Kapcsolat",
   "PHONE": "Telefon",
@@ -42,5 +42,6 @@
   "A_SUB": "Haladóknak és kategóriaváltóknak",
   "A1_DESC": "Könnyen kezelhető 125 cm³-es gépek – stabil egyensúly és egyszerű kezelhetőség az első lépésekhez.",
   "A2_DESC": "A2-es modelljeink olyan fojtott, közepes lökettérfogatú motorok, amelyek valódi teljesítményt nyújtanak, miközben barátságosak maradnak a kezdők számára is.",
-  "A_DESC": "Kiváló egyensúlyú túra- és naked motorokat biztosítunk, hogy felügyelet mellett, biztonságos körülmények között tapasztalhasd meg a korlátozás nélküli teljesítményt."
+  "A_DESC": "Kiváló egyensúlyú túra- és naked motorokat biztosítunk, hogy felügyelet mellett, biztonságos körülmények között tapasztalhasd meg a korlátozás nélküli teljesítményt.",
+  "CONTACTS": "Kapcsolat"
 }

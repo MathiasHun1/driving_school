@@ -1,6 +1,16 @@
 {
   "routes": {
     "/": {},
-    "/about": {}
+    "/a-kategoria": {},
+    "/a1-kategoria": {},
+    "/a2-kategoria": {},
+    "/about": {},
+    "/arak": {},
+    "/elso-lepes": {},
+    "/jarmuvek": {},
+    "/kapcsolat": {},
+    "/kresz": {},
+    "/oktatok": {},
+    "/tajekoztato": {}
   }
 }
