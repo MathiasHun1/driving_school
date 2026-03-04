@@ -14,12 +14,15 @@
     </div>
   </div>
 
-  <nav class="container site-header__nav" [class.is-open]="isMenuOpen">
+
+</header>
+
+<div class="nav-container">
+  <nav class=" container header-nav" [class.is-open]="isMenuOpen">
     @for (item of primary; track item.path) {
       <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">
         {{ item.label }}
       </a>
     }
   </nav>
-
-</header>
+</div>
