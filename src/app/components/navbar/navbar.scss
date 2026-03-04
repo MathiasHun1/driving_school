@@ -9,6 +9,12 @@
   z-index: 30;
   backdrop-filter: blur(10px);
   background: rgba(247, 244, 239, 0.92);
+  display: none;
+
+  @include respond(tablet) {
+    grid-template-columns: auto 1fr auto;
+    display: block;
+  }
 
   &__top {
     display: grid;
@@ -42,6 +48,11 @@
   z-index: 9999;
   background-color:  rgba(247, 244, 239, 0.92);
   border-bottom: 1px solid var(--line);
+  display: none;
+
+  @include respond(tablet) {
+    display: block;
+  }
 }
 
 .header-nav {
@@ -125,5 +136,26 @@
   small {
     color: var(--ink-600);
     font-size: 0.78rem;
+  }
+}
+
+// bootrap overrides
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between !important;
+
+  .brand-mobile {
+    width: 80px;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+}
+
+.navbar {
+  display: block;
+  @include respond(tablet) {
+    display: none;
   }
 }

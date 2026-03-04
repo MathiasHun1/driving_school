@@ -4,10 +4,6 @@
       <img src="logo.png" alt="Mocisuli Gödöllő" width="88" height="88" />
     </a>
 
-    <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen">
-      Menü
-    </button>
-
     <div class="contact">
       <a href="tel:+36309382689">06 30 938 26 89</a>
       <small>2100 Gödöllő, Dózsa György út 13.</small>
@@ -26,3 +22,43 @@
     }
   </nav>
 </div>
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="brand-mobile" routerLink="/" (click)="closeMenu()">
+      <img src="logo.png" alt="Mocisuli Gödöllő" width="88" height="88" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-group list-group-flush navbar-nav justify-content-end flex-grow-1 pe-3">
+
+          @for (item of primary; track item.path) {
+            @if (item.path !== '/kategoriak') {
+              <li class="nav-item list-group-item">
+                <a class="nav-link" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">
+                  {{ item.label }}
+                </a>
+              </li>
+            }
+          }
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Kategóriák
+            </a>
+            <ul class="dropdown-menu">
+              @for (item of secondary; track item.path) {
+                <li><a class="dropdown-item" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">{{ item.label }}</a></li>
+              }
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
