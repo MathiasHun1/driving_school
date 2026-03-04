@@ -36,6 +36,30 @@ export const routes: Routes = [
       import('./pages/info/info.component').then((m) => m.InfoComponent),
   },
   {
+    path: 'kategoriak',
+    title: 'Mocisuli Gödöllő | Kategóriák',
+    loadComponent: () =>
+      import('./pages/categories/categories.component').then(
+        (m) => m.CategoriesComponent,
+      ),
+  },
+  {
+    path: 'am-kategoria',
+    title: 'Mocisuli Gödöllő | AM kategória',
+    loadComponent: () =>
+      import('./pages/category-am/category-am.component').then(
+        (m) => m.CategoryAmComponent,
+      ),
+  },
+  {
+    path: 'a1-kategoria-b-vel',
+    title: 'Mocisuli Gödöllő | A1 kategória B-vel',
+    loadComponent: () =>
+      import('./pages/category-a1b/category-a1b.component').then(
+        (m) => m.CategoryA1bComponent,
+      ),
+  },
+  {
     path: 'elso-lepes',
     title: 'Mocisuli Gödöllő | Első lépés',
     loadComponent: () =>

@@ -1,19 +1,24 @@
 ﻿<main class="page page-shell">
-  <section class="container">
+  <section class="container vehicles-page">
     <header class="head">
-      <p>Járművek</p>
-      <h1>Kategóriánként válogatott oktatómotorok</h1>
+      <p>Oktató járművek</p>
+      <h1>Járműparkunk</h1>
+      <span>A mocisuli.hu oldalon szereplő modellek, megújított kártyaelrendezésben.</span>
     </header>
 
-    <div class="grid">
-      @for (vehicle of list; track vehicle.category) {
-        <article class="panel card">
-          <span class="card__badge">{{ vehicle.category }}</span>
-          <h2>{{ vehicle.model }}</h2>
-          <p class="card__power">{{ vehicle.power }}</p>
-          <p>{{ vehicle.notes }}</p>
-        </article>
+    <ul class="vehicle-grid" aria-label="Oktató járművek listája">
+      @for (vehicle of vehicles; track vehicle.name) {
+        <li class="vehicle-card">
+          <div class="vehicle-card__image" role="img" [attr.aria-label]="vehicle.name + ' kép helye'">
+            <span>{{ vehicle.name }}</span>
+            <small>Kép helye</small>
+          </div>
+          <div class="vehicle-card__content">
+            <h2>{{ vehicle.name }}</h2>
+            <p>{{ vehicle.text }}</p>
+          </div>
+        </li>
       }
-    </div>
+    </ul>
   </section>
 </main>

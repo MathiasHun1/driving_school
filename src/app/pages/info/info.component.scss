@@ -1,52 +1,86 @@
 ﻿@use '../../../styles.scss' as *;
 
-.head {
-  margin-bottom: 1.4rem;
+.info-page {
+  max-width: 62rem;
 
-  p {
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--accent-deep);
-    font-size: 0.75rem;
-  }
+  .info-head {
+    margin-bottom: 1.2rem;
 
-  h1 {
-    margin: 0.5rem 0;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-  }
+    p {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-deep);
+      font-size: 0.75rem;
+    }
 
-  span {
-    color: var(--ink-600);
+    h1 {
+      margin: 0.55rem 0;
+      font-size: clamp(1.4rem, 3.1vw, 2.2rem);
+      line-height: 1.2;
+    }
+
+    span {
+      color: var(--ink-600);
+      line-height: 1.5;
+
+      code {
+        background: #eef3fb;
+        border: 1px solid #d5deed;
+        border-radius: 0.35rem;
+        padding: 0.06rem 0.35rem;
+      }
+    }
   }
 }
 
-.links {
+.doc-list {
+  list-style: none;
   display: grid;
+  gap: 0.65rem;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 0.8rem;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid #d7dfed;
+  border-radius: 0.8rem;
+  background: linear-gradient(145deg, #ffffff, #f7fafe);
+  box-shadow: 0 8px 18px rgba(8, 20, 38, 0.06);
 
-  @include respond(tablet) {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-}
-
-.link-card {
-  text-decoration: none;
-  color: var(--ink-900);
-  min-height: 9rem;
-  display: grid;
-  align-content: space-between;
-  background: linear-gradient(130deg, #fff, #f5ece1);
-  transition: 0.2s ease;
-
-  &:hover {
-    transform: translateY(-3px);
+  &__title {
+    font-weight: 700;
+    color: var(--ink-900);
+    letter-spacing: 0.01em;
   }
 
-  h2 {
-    font-size: 1.35rem;
+  &__link {
+    text-decoration: none;
+    border-radius: 999px;
+    border: 1px solid #cfdaec;
+    background: #fff;
+    color: var(--ink-900);
+    font-weight: 700;
+    padding: 0.45rem 0.8rem;
+    white-space: nowrap;
+    transition: 0.2s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      border-color: #b7c8e3;
+      background: #f2f7ff;
+    }
   }
 
-  p {
-    color: var(--ink-600);
+  @media (max-width: 680px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__link {
+      width: 100%;
+      text-align: center;
+    }
   }
 }

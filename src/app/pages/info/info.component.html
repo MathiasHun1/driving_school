@@ -1,18 +1,20 @@
 ﻿<main class="page page-shell">
-  <section class="container">
-    <header class="head">
+  <section class="container info-page">
+    <header class="info-head">
       <p>Tájékoztató</p>
-      <h1>Minden fontos információ egy helyen</h1>
-      <span>Válaszd ki a témát és nézd át a kategóriádhoz tartozó részleteket.</span>
+      <h1>VÁLLALKOZÁSI FELTÉTELEK ÉS TANULÓ TÁJÉKOZTATÓ</h1>
+      <span>Kattintásra a helyi PDF fájl nyílik meg / töltődik le.</span>
     </header>
 
-    <div class="links">
-      @for (item of links; track item.path) {
-        <a [routerLink]="item.path" class="panel link-card">
-          <h2>{{ item.label }}</h2>
-          <p>Megnyitás</p>
-        </a>
+    <ul class="doc-list" aria-label="Tájékoztató dokumentumok">
+      @for (doc of docs; track doc.file) {
+        <li class="doc-item">
+          <div class="doc-item__title">{{ doc.title }}</div>
+          <a class="doc-item__link" [href]="pdfPath(doc.file)" [attr.download]="doc.file">
+            További információk
+          </a>
+        </li>
       }
-    </div>
+    </ul>
   </section>
 </main>

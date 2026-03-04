@@ -1,11 +1,67 @@
 ﻿<main class="page page-shell">
-  <section class="container panel category">
-    <p class="category__kicker">A1 kategória</p>
-    <h1>Könnyű motoros kezdés 125 cm3-ig</h1>
-    <ul>
-      <li>Belépő szintű, könnyen kezelhető motorok</li>
-      <li>Alapmanőverek és forgalmi magabiztosság</li>
-      <li>Fiatal vagy újrakezdő motorosoknak ideális</li>
-    </ul>
+  <section class="container category-page">
+    <header class="hero panel">
+      <p>Kategória</p>
+      <h1>{{ title }}</h1>
+      <span>{{ intro }}</span>
+    </header>
+
+    <section class="panel section-block">
+      <h2>{{ extraTitle }}</h2>
+      <p>{{ extraText }}</p>
+    </section>
+
+    <div class="split-grid">
+      <section class="panel section-block">
+        <h2>A tanfolyamra való felvétel feltételei</h2>
+        <p>Tanfolyamra az vehető fel, aki</p>
+        <ul>
+          @for (item of admission; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </section>
+
+      <section class="panel section-block">
+        <h2>Vizsgadíjak</h2>
+        <ul>
+          @for (item of fees; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </section>
+    </div>
+
+    <section class="panel section-block">
+      <h2>A vizsgára bocsátás feltételei</h2>
+
+      <h3>Elméleti vizsgára az bocsátható, aki</h3>
+      <ul>
+        @for (item of examTheory; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+
+      <h3>Járműkezelési gyakorlati vizsgára az bocsátható, aki</h3>
+      <ul>
+        @for (item of examPractice; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+
+      <h3>Forgalmi gyakorlati vizsgára az bocsátható, aki</h3>
+      <ul>
+        @for (item of examTraffic; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </section>
+
+    @if (noteTitle) {
+      <section class="panel section-block">
+        <h2>{{ noteTitle }}</h2>
+        <p>{{ noteText }}</p>
+      </section>
+    }
   </section>
 </main>

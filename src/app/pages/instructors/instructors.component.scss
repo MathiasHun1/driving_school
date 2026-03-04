@@ -1,56 +1,107 @@
 ﻿@use '../../../styles.scss' as *;
 
-.head {
-  margin-bottom: 1.2rem;
+.instructors-page {
+  .head {
+    margin-bottom: 1.1rem;
 
-  p {
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--accent-deep);
-    font-size: 0.75rem;
-  }
+    p {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-deep);
+      font-size: 0.75rem;
+    }
 
-  h1 {
-    margin-top: 0.45rem;
-    font-size: clamp(1.9rem, 4.5vw, 3.1rem);
+    h1 {
+      margin-top: 0.45rem;
+      font-size: clamp(1.9rem, 4.4vw, 3.3rem);
+    }
   }
 }
 
-.cards {
+.intro-grid {
   display: grid;
   gap: 1rem;
+
+  @include respond(tablet) {
+    grid-template-columns: 1.6fr 1fr;
+    align-items: start;
+  }
+}
+
+.bio-card {
+  p {
+    color: var(--ink-700);
+    line-height: 1.65;
+    margin-bottom: 0.9rem;
+  }
+
+  .signature {
+    margin-top: 1.2rem;
+    font-weight: 700;
+    color: var(--ink-900);
+  }
+}
+
+.profile-card {
+  &__photo {
+    min-height: 22rem;
+    border-radius: 0.85rem;
+    border: 1px dashed #cfae85;
+    background:
+      radial-gradient(circle at 20% 0, rgba(255, 140, 46, 0.15), transparent 38%),
+      linear-gradient(145deg, #fbf1e4, #f7f9fc);
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 0.3rem;
+
+    span {
+      font-weight: 700;
+      color: var(--ink-900);
+      font-size: 1.05rem;
+    }
+
+    small {
+      color: var(--ink-600);
+      font-size: 0.78rem;
+      max-width: 15rem;
+    }
+  }
+}
+
+.expectations {
+  margin-top: 2rem;
+
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin-bottom: 1rem;
+  }
+}
+
+.expect-list {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
 
   @include respond(tablet) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-.card {
-  background: linear-gradient(140deg, #fff, #fff8ef);
+.expect-item {
+  position: relative;
+  padding-left: 2.2rem;
+  color: var(--ink-800);
+  line-height: 1.45;
 
-  &__role {
-    color: var(--ink-600);
-    font-size: 0.9rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-    margin: 0.3rem 0 0.7rem;
-  }
-
-  &__bio {
-    color: var(--ink-700);
-  }
-
-  ul {
-    margin-top: 0.75rem;
-    list-style: none;
-    display: grid;
-    gap: 0.45rem;
-  }
-
-  li::before {
-    content: '▸ ';
-    color: var(--accent-deep);
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    top: 1.05rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: var(--accent);
   }
 }

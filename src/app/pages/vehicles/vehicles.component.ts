@@ -1,6 +1,10 @@
 ﻿import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { vehicles } from '../../content/site-content';
+
+interface VehicleCard {
+  name: string;
+  text: string;
+}
 
 @Component({
   standalone: true,
@@ -11,5 +15,14 @@ import { vehicles } from '../../content/site-content';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VehiclesComponent {
-  readonly list = vehicles;
+  readonly vehicles: VehicleCard[] = [
+    { name: 'Yamaha Jog', text: '...' },
+    { name: 'Yamaha Vino', text: '...' },
+    { name: 'Gilera Runner', text: '...' },
+    { name: 'Yamaha YBR 125', text: '...' },
+    { name: 'Kawasaki Er-5', text: '...' },
+    { name: 'Yamaha FZ6n', text: '...' },
+    { name: 'Suzuki GSR600', text: '...' },
+    { name: 'Audi A4', text: '...' },
+  ];
 }

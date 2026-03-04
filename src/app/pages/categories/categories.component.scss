@@ -1,0 +1,60 @@
+﻿@use '../../../styles.scss' as *;
+
+.categories-page {
+  .head {
+    margin-bottom: 1.2rem;
+
+    p {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-deep);
+      font-size: 0.76rem;
+    }
+
+    h1 {
+      margin: 0.48rem 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    span {
+      color: var(--ink-600);
+    }
+  }
+}
+
+.category-links {
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+
+  @include respond(tablet) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.category-link {
+  text-decoration: none;
+  display: block;
+  border: 1px solid #d7deea;
+  border-radius: 0.95rem;
+  padding: 1rem;
+  background: linear-gradient(140deg, #fff, #f5f9ff);
+  box-shadow: 0 10px 22px rgba(8, 25, 48, 0.08);
+  transition: 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: #becbe2;
+  }
+
+  h2 {
+    color: var(--ink-900);
+    font-size: 1.4rem;
+    margin-bottom: 0.35rem;
+  }
+
+  p {
+    color: var(--ink-600);
+    font-size: 0.95rem;
+  }
+}

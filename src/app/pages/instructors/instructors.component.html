@@ -1,23 +1,33 @@
 ﻿<main class="page page-shell">
-  <section class="container">
+  <section class="container instructors-page">
     <header class="head">
-      <p>Oktatók</p>
-      <h1>Tapasztalt, türelmes szakoktatók</h1>
+      <p>Oktatóink</p>
+      <h1>Fekete Zoltán</h1>
     </header>
 
-    <div class="cards">
-      @for (teacher of cards; track teacher.name) {
-        <article class="panel card">
-          <p class="card__role">{{ teacher.role }}</p>
-          <h2>{{ teacher.name }}</h2>
-          <p class="card__bio">{{ teacher.bio }}</p>
-          <ul>
-            @for (item of teacher.specialties; track item) {
-              <li>{{ item }}</li>
-            }
-          </ul>
-        </article>
-      }
+    <div class="intro-grid">
+      <article class="panel bio-card">
+        @for (paragraph of intro; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+        <p class="signature">Üdvözlettel, Fekete Zoltán</p>
+      </article>
+
+      <aside class="panel profile-card" aria-label="Oktató képe">
+        <div class="profile-card__photo" role="img" aria-label="Fekete Zoltán - kép helye">
+          <span>Oktató fotó</span>
+          <small>(mocisuli.hu képfájl nem volt megbízhatóan elérhető)</small>
+        </div>
+      </aside>
     </div>
+  </section>
+
+  <section class="container expectations">
+    <h2>Mire számíthatnak a Zoltán oktatását választók</h2>
+    <ul class="expect-list">
+      @for (item of highlights; track item) {
+        <li class="panel expect-item">{{ item }}</li>
+      }
+    </ul>
   </section>
 </main>

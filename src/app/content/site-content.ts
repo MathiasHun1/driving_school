@@ -26,6 +26,7 @@ export interface Vehicle {
 
 export const primaryNav: NavItem[] = [
   { label: 'Főoldal', path: '/' },
+  { label: 'Kategóriák', path: '/kategoriak' },
   { label: 'Árak', path: '/arak' },
   { label: 'Oktatók', path: '/oktatok' },
   { label: 'Járművek', path: '/jarmuvek' },
@@ -34,6 +35,8 @@ export const primaryNav: NavItem[] = [
 ];
 
 export const infoNav: NavItem[] = [
+  { label: 'AM', path: '/am-kategoria' },
+  { label: 'A1 B-vel', path: '/a1-kategoria-b-vel' },
   { label: 'Első lépés', path: '/elso-lepes' },
   { label: 'A1', path: '/a1-kategoria' },
   { label: 'A2', path: '/a2-kategoria' },

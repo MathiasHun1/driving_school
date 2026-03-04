@@ -1,0 +1,20 @@
+﻿<main class="page page-shell">
+  <section class="container categories-page">
+    <header class="head">
+      <p>Kategóriáink</p>
+      <h1>Motoros kategóriák és feltételek</h1>
+      <span>A kategóriaoldalak szövege a mocisuli.hu tartalma alapján készült.</span>
+    </header>
+
+    <ul class="category-links">
+      @for (item of links; track item.path) {
+        <li>
+          <a [routerLink]="item.path" class="category-link">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.subtitle }}</p>
+          </a>
+        </li>
+      }
+    </ul>
+  </section>
+</main>
