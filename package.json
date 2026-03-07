@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "ng build && git add . && git commit -m 'deploy' && git push",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:zozo-suli": "node dist/zozo-suli/server/server.mjs"
