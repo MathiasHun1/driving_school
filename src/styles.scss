@@ -66,6 +66,10 @@ img {
   height: auto;
 }
 
+ul {
+  padding: 0 !important;
+}
+
 .container {
   width: min(72rem, calc(100% - 2rem));
   margin-inline: auto;
@@ -76,8 +80,12 @@ img {
 }
 
 .page-shell {
-  padding-top: 80px;
+  padding-top: 20px;
   padding-bottom: 3rem;
+
+  @include respond(mobile) {
+    padding-top: 80px;
+  }
 }
 
 .panel {
@@ -132,4 +140,9 @@ img {
   to {
     transform: scale(1.02);
   }
+}
+
+// GLOBAL STYLES
+.section-title {
+  font-size: 16px !important;
 }

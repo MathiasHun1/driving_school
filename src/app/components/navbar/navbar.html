@@ -23,6 +23,7 @@
   </nav>
 </div>
 
+<!------------MOBILE NAVBAR------------->
 <nav class="navbar">
   <div class="container-fluid">
     <a class="brand-mobile" routerLink="/" (click)="closeMenu()">
@@ -41,7 +42,7 @@
           @for (item of primary; track item.path) {
             @if (item.path !== '/kategoriak') {
               <li class="nav-item list-group-item">
-                <a class="nav-link" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">
+                <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" class="nav-link" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">
                   {{ item.label }}
                 </a>
               </li>
@@ -53,7 +54,7 @@
             </a>
             <ul class="dropdown-menu">
               @for (item of secondary; track item.path) {
-                <li><a class="dropdown-item" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">{{ item.label }}</a></li>
+                <li><a data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" class="dropdown-item" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMenu()">{{ item.label }}</a></li>
               }
             </ul>
           </li>

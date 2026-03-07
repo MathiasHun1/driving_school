@@ -57,6 +57,7 @@ export class Navbar implements AfterViewInit, OnDestroy {
   }
 
   closeMenu(): void {
+    console.log("run close")
     this.isMenuOpen = false;
     this.syncCompactState();
   }

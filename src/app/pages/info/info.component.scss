@@ -36,7 +36,7 @@
 .doc-list {
   list-style: none;
   display: grid;
-  gap: 0.65rem;
+  gap: 16px;
 }
 
 .doc-item {
@@ -44,7 +44,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.8rem;
-  padding: 0.85rem 0.9rem;
+  padding: 20px 28px;
   border: 1px solid #d7dfed;
   border-radius: 0.8rem;
   background: linear-gradient(145deg, #ffffff, #f7fafe);

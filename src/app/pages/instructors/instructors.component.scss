@@ -46,10 +46,8 @@
   &__photo {
     min-height: 22rem;
     border-radius: 0.85rem;
-    border: 1px dashed #cfae85;
-    background:
-      radial-gradient(circle at 20% 0, rgba(255, 140, 46, 0.15), transparent 38%),
-      linear-gradient(145deg, #fbf1e4, #f7f9fc);
+    //border: 1px dashed #cfae85;
+    overflow: hidden;
     display: grid;
     place-content: center;
     text-align: center;
@@ -103,5 +101,6 @@
     height: 0.55rem;
     border-radius: 999px;
     background: var(--accent);
+    transform: translateY(9px);
   }
 }

@@ -14,6 +14,35 @@
       </p>
     </article>
 
+    <article class="panel contact-form">
+      <h2>Írj nekünk</h2>
+      <p class="contact-form__intro">
+        Kérdésed van vagy szeretnél időpontot? Küldd el az üzeneted, rövid időn
+        belül válaszolunk.
+      </p>
+      <form class="contact-form__grid" method="post">
+        <label class="form-field">
+          <span>Név</span>
+          <input type="text" name="name" [(ngModel)]="form.name" autocomplete="name" required />
+        </label>
+        <label class="form-field">
+          <span>E-mail</span>
+          <input type="email" name="email" [(ngModel)]="form.email" autocomplete="email" required />
+        </label>
+        <label class="form-field">
+          <span>Telefonszám</span>
+          <input type="tel" name="phone" [(ngModel)]="form.phone" autocomplete="tel" />
+        </label>
+        <label class="form-field form-field--full">
+          <span>Üzenet</span>
+          <textarea name="message" [(ngModel)]="form.message" rows="5" required></textarea>
+        </label>
+        <button class="btn btn--solid contact-form__submit" type="submit">
+          Üzenet küldése
+        </button>
+      </form>
+    </article>
+
     <article class="panel map-placeholder" aria-label="Térkép helye">
       <h2>Helyszín</h2>
       <p>Gödöllő központ, könnyen megközelíthető oktatási pont.</p>
