@@ -3,19 +3,19 @@
 export const routes: Routes = [
   {
     path: '',
-    title: 'Mocisuli Gödöllő | Főoldal',
+    title: 'Mocisuli Budapest | Főoldal',
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'arak',
-    title: 'Mocisuli Gödöllő | Árak',
+    title: 'Mocisuli Budapest | Árak',
     loadComponent: () =>
       import('./pages/prices/prices.component').then((m) => m.PricesComponent),
   },
   {
     path: 'oktatok',
-    title: 'Mocisuli Gödöllő | Oktatók',
+    title: 'Mocisuli Budapest | Oktatók',
     loadComponent: () =>
       import('./pages/instructors/instructors.component').then(
         (m) => m.InstructorsComponent,
@@ -23,7 +23,7 @@ export const routes: Routes = [
   },
   {
     path: 'jarmuvek',
-    title: 'Mocisuli Gödöllő | Járművek',
+    title: 'Mocisuli Budapest | Járművek',
     loadComponent: () =>
       import('./pages/vehicles/vehicles.component').then(
         (m) => m.VehiclesComponent,
@@ -31,13 +31,13 @@ export const routes: Routes = [
   },
   {
     path: 'tajekoztato',
-    title: 'Mocisuli Gödöllő | Tájékoztató',
+    title: 'Mocisuli Budapest | Tájékoztató',
     loadComponent: () =>
       import('./pages/info/info.component').then((m) => m.InfoComponent),
   },
   {
     path: 'kategoriak',
-    title: 'Mocisuli Gödöllő | Kategóriák',
+    title: 'Mocisuli Budapest | Kategóriák',
     loadComponent: () =>
       import('./pages/categories/categories.component').then(
         (m) => m.CategoriesComponent,
@@ -45,7 +45,7 @@ export const routes: Routes = [
   },
   {
     path: 'am-kategoria',
-    title: 'Mocisuli Gödöllő | AM kategória',
+    title: 'Mocisuli Budapest | AM kategória',
     loadComponent: () =>
       import('./pages/category-am/category-am.component').then(
         (m) => m.CategoryAmComponent,
@@ -53,7 +53,7 @@ export const routes: Routes = [
   },
   {
     path: 'a1-kategoria-b-vel',
-    title: 'Mocisuli Gödöllő | A1 kategória B-vel',
+    title: 'Mocisuli Budapest | A1 kategória B-vel',
     loadComponent: () =>
       import('./pages/category-a1b/category-a1b.component').then(
         (m) => m.CategoryA1bComponent,
@@ -61,7 +61,7 @@ export const routes: Routes = [
   },
   {
     path: 'elso-lepes',
-    title: 'Mocisuli Gödöllő | Első lépés',
+    title: 'Mocisuli Budapest | Első lépés',
     loadComponent: () =>
       import('./pages/first-steps/first-steps.component').then(
         (m) => m.FirstStepsComponent,
@@ -69,7 +69,7 @@ export const routes: Routes = [
   },
   {
     path: 'a1-kategoria',
-    title: 'Mocisuli Gödöllő | A1 kategória',
+    title: 'Mocisuli Budapest | A1 kategória',
     loadComponent: () =>
       import('./pages/category-a1/category-a1.component').then(
         (m) => m.CategoryA1Component,
@@ -77,7 +77,7 @@ export const routes: Routes = [
   },
   {
     path: 'a2-kategoria',
-    title: 'Mocisuli Gödöllő | A2 kategória',
+    title: 'Mocisuli Budapest | A2 kategória',
     loadComponent: () =>
       import('./pages/category-a2/category-a2.component').then(
         (m) => m.CategoryA2Component,
@@ -85,7 +85,7 @@ export const routes: Routes = [
   },
   {
     path: 'a-kategoria',
-    title: 'Mocisuli Gödöllő | A kategória',
+    title: 'Mocisuli Budapest | A kategória',
     loadComponent: () =>
       import('./pages/category-a/category-a.component').then(
         (m) => m.CategoryAComponent,
@@ -93,13 +93,13 @@ export const routes: Routes = [
   },
   {
     path: 'kresz',
-    title: 'Mocisuli Gödöllő | KRESZ',
+    title: 'Mocisuli Budapest | KRESZ',
     loadComponent: () =>
       import('./pages/kresz/kresz.component').then((m) => m.KreszComponent),
   },
   {
     path: 'kapcsolat',
-    title: 'Mocisuli Gödöllő | Kapcsolat',
+    title: 'Mocisuli Budapest | Kapcsolat',
     loadComponent: () =>
       import('./pages/contact/contact.component').then((m) => m.ContactComponent),
   },

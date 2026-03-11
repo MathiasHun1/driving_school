@@ -20,7 +20,7 @@
         Kérdésed van vagy szeretnél időpontot? Küldd el az üzeneted, rövid időn
         belül válaszolunk.
       </p>
-      <form class="contact-form__grid" method="post">
+      <form class="contact-form__grid" method="post" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
         <label class="form-field">
           <span>Név</span>
           <input type="text" name="name" [(ngModel)]="form.name" autocomplete="name" required />
@@ -37,16 +37,21 @@
           <span>Üzenet</span>
           <textarea name="message" [(ngModel)]="form.message" rows="5" required></textarea>
         </label>
-        <button class="btn btn--solid contact-form__submit" type="submit">
-          Üzenet küldése
+        <button class="btn btn--solid contact-form__submit" type="submit" [disabled]="sending()">
+          {{ sending() ? 'Küldés...' : 'Üzenet küldése' }}
         </button>
-      </form>
-    </article>
 
-    <article class="panel map-placeholder" aria-label="Térkép helye">
-      <h2>Helyszín</h2>
-      <p>Gödöllő központ, könnyen megközelíthető oktatási pont.</p>
-      <div class="map-placeholder__box">Térkép beágyazás helye</div>
+        @if (submitStatus() === 'success') {
+          <p class="contact-form__status contact-form__status--success">
+            Sikeres küldés. Hamarosan válaszolunk.
+          </p>
+        }
+        @if (submitStatus() === 'error') {
+          <p class="contact-form__status contact-form__status--error">
+            Nem sikerült elküldeni az üzenetet. Kérjük próbáld újra.
+          </p>
+        }
+      </form>
     </article>
   </section>
 </main>

@@ -122,15 +122,15 @@ export const vehicles: Vehicle[] = [
 ];
 
 export const schoolFacts = [
-  'Gödöllő központi helyszín',
+  'Budapest központi helyszín',
   'Rugalmas időpont-egyeztetés',
   'Kis csoportos, figyelmes oktatás',
   'Vizsgáig kísért, átlátható folyamat',
 ];
 
 export const contactData = {
-  school: 'Mocisuli Gödöllő',
-  address: '2100 Gödöllő, Dózsa György út 13.',
-  phone: '06 30 938 26 89',
-  email: 'info@mocisuli.hu',
+  school: 'Mocisuli Budapest',
+  address: '2191 Bag, Sport u. 10. ',
+  phone: '06706132636',
+  email: 'fashionbemore@gmail.com',
 };
