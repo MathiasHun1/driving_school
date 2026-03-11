@@ -95,6 +95,10 @@
   &__status--error {
     color: #b03a2e;
   }
+
+  &__status--warning {
+    color: #8a6d1f;
+  }
 }
 
 .form-field {
@@ -128,6 +132,14 @@
 
 .form-field--full {
   grid-column: 1 / -1;
+}
+
+.form-field--hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .form-consent {

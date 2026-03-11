@@ -21,6 +21,10 @@
         belül válaszolunk.
       </p>
       <form class="contact-form__grid" method="post" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+        <label class="form-field form-field--hp" aria-hidden="true">
+          <span>Weboldal</span>
+          <input type="text" name="website" [(ngModel)]="form.website" tabindex="-1" autocomplete="off" />
+        </label>
         <label class="form-field">
           <span>Név</span>
           <input type="text" name="name" [(ngModel)]="form.name" autocomplete="name" required />
@@ -49,6 +53,11 @@
         @if (submitStatus() === 'error') {
           <p class="contact-form__status contact-form__status--error">
             Nem sikerült elküldeni az üzenetet. Kérjük próbáld újra.
+          </p>
+        }
+        @if (submitStatus() === 'rate_limited') {
+          <p class="contact-form__status contact-form__status--warning">
+            Túl sok próbálkozás. Kérjük várj 10 percet, majd próbáld újra.
           </p>
         }
       </form>

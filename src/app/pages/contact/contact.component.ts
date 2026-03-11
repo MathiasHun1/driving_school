@@ -12,18 +12,40 @@ import { EMAILJS_CONFIG } from '../../config/emailjs.config';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactComponent {
+  private readonly rateLimitKey = 'contact_form_submissions_v1';
+  private readonly rateLimitWindowMs = 10 * 60 * 1000;
+  private readonly rateLimitMaxAttempts = 3;
+
   readonly contact = contactData;
   readonly form = {
     name: '',
     email: '',
     phone: '',
     message: '',
+    website: '',
   };
   readonly sending = signal(false);
-  readonly submitStatus = signal<'idle' | 'success' | 'error'>('idle');
+  readonly submitStatus = signal<'idle' | 'success' | 'error' | 'rate_limited'>('idle');
 
   async onSubmit(formRef: NgForm): Promise<void> {
     if (formRef.invalid || this.sending()) {
+      return;
+    }
+
+    if (this.form.website.trim()) {
+      this.submitStatus.set('success');
+      formRef.resetForm({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        website: '',
+      });
+      return;
+    }
+
+    if (this.isRateLimited()) {
+      this.submitStatus.set('rate_limited');
       return;
     }
 
@@ -32,12 +54,14 @@ export class ContactComponent {
 
     try {
       await this.sendViaEmailJs();
+      this.recordSubmissionTimestamp();
       this.submitStatus.set('success');
       formRef.resetForm({
         name: '',
         email: '',
         phone: '',
         message: '',
+        website: '',
       });
     } catch (error) {
       console.error('EmailJS send failed', error);
@@ -71,6 +95,39 @@ export class ContactComponent {
     if (!response.ok) {
       const body = await response.text();
       throw new Error(`EmailJS request failed: ${response.status} ${body}`);
+    }
+  }
+
+  private isRateLimited(): boolean {
+    if (typeof localStorage === 'undefined') {
+      return false;
+    }
+
+    try {
+      const now = Date.now();
+      const raw = localStorage.getItem(this.rateLimitKey);
+      const attempts = raw ? (JSON.parse(raw) as number[]) : [];
+      const recentAttempts = attempts.filter((timestamp) => now - timestamp < this.rateLimitWindowMs);
+      return recentAttempts.length >= this.rateLimitMaxAttempts;
+    } catch {
+      return false;
+    }
+  }
+
+  private recordSubmissionTimestamp(): void {
+    if (typeof localStorage === 'undefined') {
+      return;
+    }
+
+    try {
+      const now = Date.now();
+      const raw = localStorage.getItem(this.rateLimitKey);
+      const attempts = raw ? (JSON.parse(raw) as number[]) : [];
+      const recentAttempts = attempts.filter((timestamp) => now - timestamp < this.rateLimitWindowMs);
+      recentAttempts.push(now);
+      localStorage.setItem(this.rateLimitKey, JSON.stringify(recentAttempts));
+    } catch {
+      // Ignore localStorage failures and keep form usable.
     }
   }
 }
