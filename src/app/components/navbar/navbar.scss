@@ -140,7 +140,6 @@
 }
 
 // bootrap overrides
-
 .container-fluid {
   display: flex;
   justify-content: space-between !important;
@@ -154,7 +153,11 @@
 }
 
 .navbar {
+  background: #f8efe5;
   display: block;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
   @include respond(tablet) {
     display: none;
   }

@@ -3,11 +3,12 @@ import {
   AfterViewInit,
   Component,
   Inject,
-  OnDestroy,
+  OnDestroy, OnInit,
   PLATFORM_ID,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { infoNav, primaryNav } from '../../content/site-content';
+import {fromEvent, throttleTime, map} from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
