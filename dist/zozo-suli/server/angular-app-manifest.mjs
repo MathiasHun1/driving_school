@@ -64,7 +64,7 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-GBNTFLCD.js"
+      "chunk-LRRTTFYX.js"
     ],
     "route": "/elso-lepes"
   },
@@ -99,7 +99,7 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-6AQSVD43.js"
+      "chunk-6DNYIFGI.js"
     ],
     "route": "/kapcsolat"
   },
@@ -116,22 +116,22 @@ export default {
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 6119, hash: '02e5059d72edea053d1d4a8389c7738906b14c340e774f3db9a15fd038480f96', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 1208, hash: '8ad285d84461d9585533c3cc8f7b46e416b2560a5a6d4d2c6367418e6aa7fa48', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'index.html': {size: 694969, hash: 'ccb983902f352bdee362682b95b1cb27a8268cb13df5290d64675151311d0c45', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
-    'arak/index.html': {size: 689065, hash: '685476258626de8144c0aa0d8b0c0f3bf8f14af439ef3240aae2eefd1497ba5b', text: () => import('./assets-chunks/arak_index_html.mjs').then(m => m.default)},
-    'am-kategoria/index.html': {size: 692677, hash: 'e6402c5ac1c97ac538dbe991ba99a17c63ae95b0f7e07ab585fbde164e4aeddd', text: () => import('./assets-chunks/am-kategoria_index_html.mjs').then(m => m.default)},
-    'kategoriak/index.html': {size: 688870, hash: 'b6180ecb250931e402434997c6c35dde6c1e89a8b33aab77fd7448aabeb1d33d', text: () => import('./assets-chunks/kategoriak_index_html.mjs').then(m => m.default)},
-    'a2-kategoria/index.html': {size: 693380, hash: '5a97867958be35ae8179a7a7502cf357218edb7486221a0d06cec882890cc704', text: () => import('./assets-chunks/a2-kategoria_index_html.mjs').then(m => m.default)},
-    'kresz/index.html': {size: 358570, hash: '9234af5d6e87bd9b421ce9f0a047a64d59d819ee07c87700a36ba8c8097bf6ca', text: () => import('./assets-chunks/kresz_index_html.mjs').then(m => m.default)},
-    'oktatok/index.html': {size: 691317, hash: 'c8f8b2be150bf60cd3024cfe6e493696690c7e2f2c93e8044939fe0a322a4cd7', text: () => import('./assets-chunks/oktatok_index_html.mjs').then(m => m.default)},
-    'tajekoztato/index.html': {size: 687571, hash: '4bef8b7648b05b11df32200da212af5236c5b609c5af4ea3d22207ac695741b4', text: () => import('./assets-chunks/tajekoztato_index_html.mjs').then(m => m.default)},
-    'elso-lepes/index.html': {size: 358744, hash: '049e36850f886e2241b46dbe0b4553829062000563fef0d008688d0e2d3d5bfe', text: () => import('./assets-chunks/elso-lepes_index_html.mjs').then(m => m.default)},
-    'a-kategoria/index.html': {size: 693193, hash: '230512108c8d930e53de89cae9236c8eaa87f10aad6d50345114cb9a3b344c02', text: () => import('./assets-chunks/a-kategoria_index_html.mjs').then(m => m.default)},
-    'jarmuvek/index.html': {size: 691580, hash: 'a3157ba2630d0c1e770d7d796bd67046f6fb2968f1b3186a62a36ea81d130551', text: () => import('./assets-chunks/jarmuvek_index_html.mjs').then(m => m.default)},
-    'a1-kategoria/index.html': {size: 693151, hash: '2bc3c17385eb35c3ff29f91a89f9b1ab59c986bbfd5ea9bef7ee729953cc4f09', text: () => import('./assets-chunks/a1-kategoria_index_html.mjs').then(m => m.default)},
-    'a1-kategoria-b-vel/index.html': {size: 689104, hash: '760e0901c8c2a64f4bdea485e6bd823df4f12976c44d6553abfb98c924cd7ab2', text: () => import('./assets-chunks/a1-kategoria-b-vel_index_html.mjs').then(m => m.default)},
-    'kapcsolat/index.html': {size: 690620, hash: '8c6fedadfca5bd33b08ec09b70778c1bb370fd936b462110135d5957b0360508', text: () => import('./assets-chunks/kapcsolat_index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 6119, hash: 'e5253882373c85a9cd8279fe8acafd459c4afefd857a4cc2885903c88bfba20c', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 1208, hash: 'fba33ce8c9452fda12563859387a47f4c7489537386cd36222cb57687d2309cb', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'am-kategoria/index.html': {size: 693141, hash: 'b754e5e911cb61a5b35e0d59a8bbebbc2cc36ed49f03ee9741a1195ea6f33e1f', text: () => import('./assets-chunks/am-kategoria_index_html.mjs').then(m => m.default)},
+    'kategoriak/index.html': {size: 689334, hash: '9625bccf5972ad7fdc4e622112d82c93004b7d2349fa01ca932b8d2bfa2ba65f', text: () => import('./assets-chunks/kategoriak_index_html.mjs').then(m => m.default)},
+    'index.html': {size: 695433, hash: '85025b1c8f32de1ce8e275cc433b0237b0c6c0c07f3a4c78716e2d8f6dcf0689', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'arak/index.html': {size: 689529, hash: 'a1bc22d8ac75a7f150b58d2cfc55925929b7a4f411c7332a2129022ae917f70b', text: () => import('./assets-chunks/arak_index_html.mjs').then(m => m.default)},
+    'kresz/index.html': {size: 359034, hash: '7c0bea07a101c3e06a2898c6546adb8f1bf7c39461035c2f9668746d7f840484', text: () => import('./assets-chunks/kresz_index_html.mjs').then(m => m.default)},
+    'a2-kategoria/index.html': {size: 693854, hash: '4a87a6113cc7ee51124890572c7482d005fe287b9d44913bb2a51382f0052416', text: () => import('./assets-chunks/a2-kategoria_index_html.mjs').then(m => m.default)},
+    'oktatok/index.html': {size: 691773, hash: '1fac84fca06388dd74e1c1c2e3100ae708da207e5be8e9cad38ac467f697828e', text: () => import('./assets-chunks/oktatok_index_html.mjs').then(m => m.default)},
+    'tajekoztato/index.html': {size: 688035, hash: '0a6459ef8428472ff70c1d0f7fd23f36cfa56fb0a93a3ec1aa7c8faa2a3e68b9', text: () => import('./assets-chunks/tajekoztato_index_html.mjs').then(m => m.default)},
+    'elso-lepes/index.html': {size: 687010, hash: 'a772c3251ce439975f5e98bfd39b7b256b59398db6c10fdf48966560f241bf61', text: () => import('./assets-chunks/elso-lepes_index_html.mjs').then(m => m.default)},
+    'a-kategoria/index.html': {size: 693667, hash: '42276ae182ffd4029218daeee3d8a0e9b94c3590696f097e47a72fdb483b43df', text: () => import('./assets-chunks/a-kategoria_index_html.mjs').then(m => m.default)},
+    'a1-kategoria/index.html': {size: 693615, hash: '628b1ed6b94b41d7a0b90e2aa67ad2cadc3ee9c895c3dda19aa0ede4647f2434', text: () => import('./assets-chunks/a1-kategoria_index_html.mjs').then(m => m.default)},
+    'jarmuvek/index.html': {size: 692038, hash: '20b0b4970d03c13f516c5e58de1f8a4faaef188c5868040b85478459e4959c1b', text: () => import('./assets-chunks/jarmuvek_index_html.mjs').then(m => m.default)},
+    'a1-kategoria-b-vel/index.html': {size: 689566, hash: '35bbdfb95770570a915a5b649197d6f3190e630154a775cc93890e9add809118', text: () => import('./assets-chunks/a1-kategoria-b-vel_index_html.mjs').then(m => m.default)},
+    'kapcsolat/index.html': {size: 691088, hash: '22cc1dd290f9351993682918460577c5b55ae365b018b4b9d264e1ee74b24403', text: () => import('./assets-chunks/kapcsolat_index_html.mjs').then(m => m.default)},
     'styles-2BUCRLLH.css': {size: 228398, hash: 'FrTkdFyFJCg', text: () => import('./assets-chunks/styles-2BUCRLLH_css.mjs').then(m => m.default)}
   },
 };

@@ -1,14 +1,51 @@
-﻿<main class="page page-shell">
-  <section class="container">
+<main class="page page-shell">
+  <section class="container first-steps">
     <header class="head">
       <p>Első lépés</p>
-      <h1>Így indul a képzés folyamata</h1>
+      <h1>Kötelező tudnivalók a gyakorlati oktatáshoz</h1>
+      <span>Az alábbi tartalom a mocisuli.hu első lépés oldalának tájékoztatója alapján készült.</span>
     </header>
 
-    <ol class="panel list">
-      @for (item of steps; track item) {
-        <li>{{ item }}</li>
-      }
-    </ol>
+    <section class="panel section">
+      <h2>Kötelező védőfelszerelés</h2>
+      <p class="muted">A gyakorlati oktatásra és vizsgára kötelező hozni és viselni:</p>
+      <ul class="list" aria-label="Kötelező védőfelszerelés">
+        @for (item of equipment; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </section>
+
+    <section class="panel section">
+      <h2>Motoros pályák</h2>
+      <p>
+        Érdemes a kategóriának megfelelő pályákat már az oktatás előtt megtanulni, így gyakorláskor a technikai
+        részletekre tudjuk helyezni a hangsúlyt. Az alábbi felsorolásban megtaláljátok a kategóriátokhoz tartozó
+        vizsgafeladatok sorszámát, a link alatt pedig videók és pályarajzok segítik a tanulást.
+      </p>
+      <a class="ext-link" href="https://vizsgakozpont.hu/motoros-oktatovideok" target="_blank" rel="noopener">
+        vizsgakozpont.hu/motoros-oktatovideok
+      </a>
+      <ul class="list" aria-label="Vizsgafeladatok kategóriánként">
+        @for (item of examTasks; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </section>
+
+    <section class="meta-grid">
+      <article class="panel section">
+        <h2>Helyszín</h2>
+        <p>Gödöllő, Méhész köz 5.</p>
+      </article>
+
+      <article class="panel section">
+        <h2>Iratok</h2>
+        <p>
+          Gyakorlati oktatáskor és vizsgán a tanulónak tudnia kell magát igazolnia, ezért érvényes személyi igazolványt
+          vagy útlevelet, lakcímkártyát és ha van, vezetői engedélyt kell magánál tartani.
+        </p>
+      </article>
+    </section>
   </section>
 </main>

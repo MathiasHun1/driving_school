@@ -9,8 +9,10 @@
       @for (vehicle of vehicles; track vehicle.name) {
         <li class="vehicle-card">
           <div class="vehicle-card__image" role="img" [attr.aria-label]="vehicle.name + ' kép helye'">
-            <span>{{ vehicle.name }}</span>
-            <small>Kép helye</small>
+            <span class="decor"></span>
+            <div class="img-wrapper">
+              <img [src]="vehicle.imgUrl" alt="">
+            </div>
           </div>
           <div class="vehicle-card__content">
             <h2>{{ vehicle.name }}</h2>

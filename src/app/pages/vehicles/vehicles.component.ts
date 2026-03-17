@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 interface VehicleCard {
   name: string;
   text: string;
+  imgUrl: string;
 }
 
 @Component({
@@ -16,13 +17,13 @@ interface VehicleCard {
 })
 export class VehiclesComponent {
   readonly vehicles: VehicleCard[] = [
-    { name: 'Yamaha Jog', text: '...' },
-    { name: 'Yamaha Vino', text: '...' },
-    { name: 'Gilera Runner', text: '...' },
-    { name: 'Yamaha YBR 125', text: '...' },
-    { name: 'Kawasaki Er-5', text: '...' },
-    { name: 'Yamaha FZ6n', text: '...' },
-    { name: 'Suzuki GSR600', text: '...' },
-    { name: 'Audi A4', text: '...' },
+    { name: 'Yamaha Jog', text: '...', imgUrl: 'mocik/jog.jpg' },
+    { name: 'Yamaha Vino', text: '...', imgUrl: 'mocik/vino.jpg' },
+    { name: 'Gilera Runner', text: '...', imgUrl: 'mocik/runner.jpg' },
+    { name: 'Yamaha YBR 125', text: '...', imgUrl: 'mocik/ybr.jpg' },
+    { name: 'Kawasaki Er-5', text: '...', imgUrl: 'mocik/er5.jpg' },
+    { name: 'Yamaha FZ6n', text: '...', imgUrl: 'mocik/fz6.jpg' },
+    { name: 'Suzuki GSR600', text: '...', imgUrl: 'mocik/gsr600.jpg' },
+    { name: 'Audi A4', text: '...', imgUrl: 'mocik/audi.jpg' },
   ];
 }

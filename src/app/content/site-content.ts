@@ -31,13 +31,13 @@ export const primaryNav: NavItem[] = [
   { label: 'Járművek', path: '/jarmuvek' },
   { label: 'Kategóriák', path: '/kategoriak' },
   { label: 'Tájékoztató', path: '/tajekoztato' },
+  { label: 'Első lépés', path: '/elso-lepes' },
   { label: 'Kapcsolat', path: '/kapcsolat' },
 ];
 
 export const infoNav: NavItem[] = [
   { label: 'AM', path: '/am-kategoria' },
   { label: 'A1 B-vel', path: '/a1-kategoria-b-vel' },
-  { label: 'Első lépés', path: '/elso-lepes' },
   { label: 'A1', path: '/a1-kategoria' },
   { label: 'A2', path: '/a2-kategoria' },
   { label: 'A', path: '/a-kategoria' },
