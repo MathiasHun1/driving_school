@@ -129,8 +129,8 @@ export const schoolFacts = [
 ];
 
 export const contactData = {
-  school: 'Mocisuli Budapest',
+  school: 'Mocisuli',
   address: '2191 Bag, Sport u. 10. ',
   phone: '06706132636',
-  email: 'fashionbemore@gmail.com',
+  email: 'mocisuli@gmail.com',
 };
